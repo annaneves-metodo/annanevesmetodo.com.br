@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do Conhecimento ao Produto — Anna Neves</title>
+<meta name="description" content="Transforme seu conhecimento no seu primeiro produto digital em 14 dias. 3 horas por semana. Com IA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --preto:#0B0B0B;
+  --dourado:#B1976B;
+  --dourado-claro:#D4B98A;
+  --marfim:#F5F1EB;
+  --cinza:#2F2F2F;
+  --cinza-medio:#555;
+  --borda:#2A2A2A;
+}
+html{scroll-behavior:smooth}
+body{background:var(--preto);color:var(--marfim);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;line-height:1.2}
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;background:rgba(11,11,11,0.95);border-bottom:1px solid var(--borda)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:14px;letter-spacing:0.12em;color:var(--dourado);text-decoration:none;font-weight:400}
+.nav-cta{background:var(--dourado);color:var(--preto);padding:8px 20px;font-size:13px;font-weight:500;text-decoration:none;letter-spacing:0.04em;transition:background 0.2s}
+.nav-cta:hover{background:var(--dourado-claro)}
+
+/* HERO */
+.hero{padding:140px 0 80px;border-bottom:1px solid var(--borda)}
+.hero-tag{font-size:12px;letter-spacing:0.18em;color:var(--dourado);text-transform:uppercase;margin-bottom:24px;display:block}
+.hero h1{font-size:clamp(36px,6vw,64px);margin-bottom:20px;color:#fff}
+.hero h1 em{color:var(--dourado);font-style:italic}
+.hero-sub{font-size:18px;color:#aaa;margin-bottom:12px;font-weight:300}
+.hero-detalhe{font-size:14px;color:var(--dourado);letter-spacing:0.1em;margin-bottom:48px}
+.hero-cta{display:inline-block;background:var(--dourado);color:var(--preto);padding:16px 40px;font-size:15px;font-weight:500;text-decoration:none;letter-spacing:0.06em;transition:all 0.2s;margin-bottom:16px}
+.hero-cta:hover{background:var(--dourado-claro);transform:translateY(-1px)}
+.hero-garantia{font-size:12px;color:#666;display:block}
+
+/* DORES */
+.secao{padding:80px 0;border-bottom:1px solid var(--borda)}
+.secao-tag{font-size:11px;letter-spacing:0.2em;color:var(--dourado);text-transform:uppercase;margin-bottom:32px;display:block}
+.secao h2{font-size:clamp(26px,4vw,40px);margin-bottom:32px;color:#fff}
+.secao h2 em{color:var(--dourado);font-style:italic}
+
+.dor-lista{list-style:none;display:flex;flex-direction:column;gap:16px}
+.dor-item{display:flex;align-items:flex-start;gap:16px;padding:20px 24px;border:1px solid var(--borda);background:#111}
+.dor-x{color:#444;font-size:18px;flex-shrink:0;margin-top:2px}
+.dor-texto{font-size:15px;color:#aaa;line-height:1.6}
+
+/* DESTAQUE */
+.destaque-box{margin:40px 0;padding:32px;border-left:3px solid var(--dourado);background:#111}
+.destaque-box p{font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,24px);color:#fff;font-style:italic;line-height:1.5}
+
+/* PRODUTO */
+.produto-info{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--borda);border:1px solid var(--borda);margin-bottom:48px}
+.produto-info-item{background:var(--preto);padding:24px 20px;text-align:center}
+.produto-info-num{font-family:'Playfair Display',serif;font-size:32px;color:var(--dourado);display:block;margin-bottom:4px}
+.produto-info-label{font-size:12px;color:#666;letter-height:0.1em;text-transform:uppercase;letter-spacing:0.1em}
+
+/* ENTREGA */
+.check-lista{list-style:none;display:flex;flex-direction:column;gap:12px}
+.check-item{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:#ccc}
+.check-tick{color:var(--dourado);flex-shrink:0;font-size:16px;margin-top:2px}
+
+/* MÓDULOS */
+.modulos{display:flex;flex-direction:column;gap:1px;background:var(--borda);border:1px solid var(--borda);margin-top:40px}
+.modulo{display:grid;grid-template-columns:64px 1fr;background:var(--preto);transition:background 0.15s}
+.modulo:hover{background:#111}
+.modulo-num{background:var(--cinza);display:flex;align-items:center;justify-content:center;padding:24px 0}
+.modulo-num span{font-family:'Playfair Display',serif;font-size:20px;color:var(--dourado)}
+.modulo-corpo{padding:20px 24px;border-left:1px solid var(--borda)}
+.modulo-titulo{font-size:15px;font-weight:500;color:#fff;margin-bottom:4px}
+.modulo-desc{font-size:13px;color:#666;line-height:1.6}
+
+/* IA */
+.ia-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.ia-card{padding:20px;border:1px solid var(--borda);background:#111}
+.ia-card-titulo{font-size:13px;font-weight:500;color:var(--dourado);margin-bottom:8px;letter-spacing:0.04em}
+.ia-card-texto{font-size:13px;color:#888;line-height:1.6}
+
+/* TRANSFORMAÇÃO */
+.transform-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--borda);margin-top:40px}
+.transform-col{display:flex;flex-direction:column}
+.transform-header{padding:16px 20px;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;font-weight:500}
+.transform-header.antes{background:#111;color:#555;border-bottom:1px solid var(--borda);border-right:1px solid var(--borda)}
+.transform-header.depois{background:var(--dourado);color:var(--preto);border-bottom:1px solid var(--borda)}
+.transform-row-antes{padding:14px 20px;font-size:14px;color:#555;border-bottom:1px solid var(--borda);border-right:1px solid var(--borda)}
+.transform-row-depois{padding:14px 20px;font-size:14px;color:#ddd;border-bottom:1px solid var(--borda);font-weight:400}
+.transform-row-antes:last-child,.transform-row-depois:last-child{border-bottom:none}
+
+/* PRÓXIMO PASSO */
+.proximo-box{padding:32px;border:1px solid var(--borda);background:#0F0F0F;margin-top:40px}
+.proximo-box h3{font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin-bottom:16px}
+.proximo-box p{font-size:15px;color:#888;margin-bottom:16px;line-height:1.7}
+.proximo-box p strong{color:#ccc;font-weight:500}
+.proximo-wpp{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:12px 24px;background:#1a1a1a;border:1px solid var(--borda);color:var(--dourado);font-size:14px;text-decoration:none;letter-spacing:0.04em;transition:border-color 0.2s}
+.proximo-wpp:hover{border-color:var(--dourado)}
+
+/* ANNA */
+.anna-grid{display:grid;grid-template-columns:120px 1fr;gap:32px;align-items:start;margin-top:40px}
+.anna-avatar{width:120px;height:120px;background:var(--cinza);border:1px solid var(--borda);display:flex;align-items:center;justify-content:center}
+.anna-avatar span{font-family:'Playfair Display',serif;font-size:36px;color:var(--dourado)}
+.anna-nome{font-family:'Playfair Display',serif;font-size:24px;color:#fff;margin-bottom:4px}
+.anna-cargo{font-size:13px;color:var(--dourado);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px}
+.anna-bio{font-size:14px;color:#888;line-height:1.7}
+.anna-numeros{display:flex;gap:32px;margin-top:20px;padding-top:20px;border-top:1px solid var(--borda)}
+.anna-num{text-align:center}
+.anna-num-val{font-family:'Playfair Display',serif;font-size:24px;color:var(--dourado);display:block}
+.anna-num-label{font-size:11px;color:#555;text-transform:uppercase;letter-spacing:0.1em}
+
+/* CTA PRINCIPAL */
+.cta-box{padding:56px 40px;text-align:center;border:1px solid var(--borda);background:#0A0A0A;margin:0}
+.cta-box-nome{font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);color:#fff;margin-bottom:8px}
+.cta-box-sub{font-size:15px;color:#666;margin-bottom:32px}
+.cta-preco{margin-bottom:32px}
+.cta-preco-label{font-size:13px;color:#555;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.1em}
+.cta-preco-val{font-family:'Playfair Display',serif;font-size:56px;color:var(--dourado);display:block;line-height:1}
+.cta-preco-detalhe{font-size:13px;color:#555;margin-top:4px;display:block}
+.cta-btn{display:inline-block;background:var(--dourado);color:var(--preto);padding:18px 48px;font-size:15px;font-weight:500;text-decoration:none;letter-spacing:0.08em;transition:all 0.2s;margin-bottom:16px}
+.cta-btn:hover{background:var(--dourado-claro);transform:translateY(-2px)}
+.cta-garantia{font-size:12px;color:#555;display:block}
+.cta-itens{display:flex;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap}
+.cta-item{font-size:12px;color:#555;display:flex;align-items:center;gap:6px}
+.cta-item::before{content:"—";color:var(--dourado)}
+
+/* GARANTIA */
+.garantia-box{padding:40px;border-left:3px solid var(--borda);margin-top:0}
+.garantia-box h3{font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin-bottom:16px}
+.garantia-box p{font-size:15px;color:#888;line-height:1.7}
+.garantia-box strong{color:#ccc;font-weight:500}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:0;border:1px solid var(--borda);margin-top:40px}
+.faq-item{padding:24px;border-bottom:1px solid var(--borda)}
+.faq-item:last-child{border-bottom:none}
+.faq-pergunta{font-size:15px;font-weight:500;color:#ddd;margin-bottom:10px}
+.faq-resposta{font-size:14px;color:#888;line-height:1.7}
+
+/* PARA QUEM */
+.perfis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--borda);border:1px solid var(--borda);margin-top:32px}
+.perfil-col{background:var(--preto)}
+.perfil-header{padding:16px 20px;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;font-weight:500;border-bottom:1px solid var(--borda)}
+.perfil-header.sim{color:var(--dourado)}
+.perfil-header.nao{color:#444}
+.perfil-item{padding:12px 20px;font-size:14px;border-bottom:1px solid var(--borda);display:flex;align-items:flex-start;gap:10px}
+.perfil-item:last-child{border-bottom:none}
+.perfil-item.sim{color:#bbb}
+.perfil-item.nao{color:#555}
+.perfil-item.sim::before{content:"✓";color:var(--dourado);flex-shrink:0}
+.perfil-item.nao::before{content:"✗";color:#333;flex-shrink:0}
+
+/* RODAPÉ */
+footer{padding:40px 24px;border-top:1px solid var(--borda);text-align:center}
+.footer-logo{font-family:'Playfair Display',serif;font-size:16px;color:var(--dourado);margin-bottom:8px;display:block}
+.footer-slogan{font-size:12px;color:#444;letter-spacing:0.12em;text-transform:uppercase}
+
+/* ANIMAÇÃO */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp 0.7s ease forwards;opacity:0}
+.delay-1{animation-delay:0.1s}
+.delay-2{animation-delay:0.25s}
+.delay-3{animation-delay:0.4s}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .ia-grid{grid-template-columns:1fr}
+  .anna-grid{grid-template-columns:1fr}
+  .anna-avatar{display:none}
+  .transform-grid{grid-template-columns:1fr}
+  .transform-header.antes,.transform-row-antes{display:none}
+  .perfis{grid-template-columns:1fr}
+  .produto-info{grid-template-columns:1fr 1fr}
+  .anna-numeros{gap:16px}
+  .cta-box{padding:40px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://annanevesmetodo.com.br" class="nav-logo">ANNA NEVES</a>
+  <a href="https://payfast.greenn.com.br/x77xwe7" class="nav-cta">COMEÇAR AGORA</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="hero-tag fade-up">Produto de entrada · Anna Neves</span>
+    <h1 class="fade-up delay-1">Do Conhecimento<br><em>ao Produto</em></h1>
+    <p class="hero-sub fade-up delay-2">Crie seu primeiro produto digital em 14 dias.</p>
+    <p class="hero-detalhe fade-up delay-2">3 horas por semana · com Inteligência Artificial</p>
+    <a href="https://payfast.greenn.com.br/x77xwe7" class="hero-cta fade-up delay-3">QUERO MEU PRIMEIRO PRODUTO DIGITAL</a>
+    <span class="hero-garantia fade-up delay-3">7 dias de garantia incondicional · R$97 · Acesso por 12 meses</span>
+  </div>
+</section>
+
+<!-- DORES -->
+<section class="secao">
+  <div class="container">
+    <span class="secao-tag">Se você se reconhece aqui</span>
+    <h2>Você tem o conhecimento.<br><em>Falta a estrutura.</em></h2>
+    <ul class="dor-lista">
+      <li class="dor-item">
+        <span class="dor-x">✗</span>
+        <span class="dor-texto">Trabalha muito, ganha por hora, e sente que seu conhecimento poderia render muito mais do que rende hoje</span>
+      </li>
+      <li class="dor-item">
+        <span class="dor-x">✗</span>
+        <span class="dor-texto">Tem ideias de produtos mas não sabe por qual começar — e trava toda vez que tenta</span>
+      </li>
+      <li class="dor-item">
+        <span class="dor-x">✗</span>
+        <span class="dor-texto">Já tentou alguma coisa no digital mas parou no meio sem clareza de direção</span>
+      </li>
+      <li class="dor-item">
+        <span class="dor-x">✗</span>
+        <span class="dor-texto">Sabe que existe um jeito de transformar o que você sabe em algo que vende — só não sabe qual é</span>
+      </li>
+    </ul>
+    <div class="destaque-box" style="margin-top:40px">
+      <p>"O problema não é o seu conhecimento. É que ele ainda não tem forma de produto."</p>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE É -->
+<section class="secao">
+  <div class="container">
+    <span class="secao-tag">O que é este programa</span>
+    <h2>14 dias. 3 horas<br><em>por semana.</em></h2>
+    <p style="font-size:16px;color:#888;margin-bottom:32px;line-height:1.8">Um programa direto, com IA como atalho, para você sair com o seu primeiro produto digital desenhado, nomeado, precificado e pronto para vender. Sem enrolação. Sem promessas mágicas.</p>
+    <div class="produto-info">
+      <div class="produto-info-item">
+        <span class="produto-info-num">14</span>
+        <span class="produto-info-label">dias</span>
+      </div>
+      <div class="produto-info-item">
+        <span class="produto-info-num">3h</span>
+        <span class="produto-info-label">por semana</span>
+      </div>
+      <div class="produto-info-item">
+        <span class="produto-info-num">1</span>
+        <span class="produto-info-label">produto real</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE CONSTRÓI -->
+<section class="secao">
+  <div class="container">
+    <span class="secao-tag">O que você constrói</span>
+    <h2>Ao final,<br><em>você tem:</em></h2>
+    <ul class="check-lista" style="margin-top:32px">
+      <li class="check-item"><span class="check-tick">—</span>Seu DNA de conhecimento mapeado — o que você faz de único que ninguém copia</li>
+      <li class="check-item"><span class="check-tick">—</span>Sua Big Idea e Proposta de Valor — a frase que explica o que você faz em uma linha</li>
+      <li class="check-item"><span class="check-tick">—</span>Seu método próprio com pilares, etapas e nome</li>
+      <li class="check-item"><span class="check-tick">—</span>O formato certo do primeiro produto para o seu momento</li>
+      <li class="check-item"><span class="check-tick">—</span>Estrutura completa do produto — módulos, aulas, promessa de cada etapa</li>
+      <li class="check-item"><span class="check-tick">—</span>Nome, promessa e preço escolhidos com critério — não com achismo</li>
+      <li class="check-item"><span class="check-tick">—</span>Como gravar sem travar — equipamento mínimo, postura, linguagem</li>
+      <li class="check-item"><span class="check-tick">—</span>O próximo passo estratégico do seu ecossistema</li>
+    </ul>
+  </div>
+</section>
+
+<!-- MÓDULOS -->
+<section class="secao">
+  <div class="container">
+    <span class="secao-tag">Estrutura do programa</span>
+    <h2>4 módulos.<br><em>14 aulas.</em></h2>
+    <div class="modulos">
+      <div class="modulo">
+        <div class="modulo-num"><span>M1</span></div>
+        <div class="modulo-corpo">
+          <p class="modulo-titulo">Clareza e Posicionamento Único</p>
+          <p class="modulo-desc">4 aulas · DNA do conhecimento · Big Idea · Proposta de valor · Diferenciação real</p>
+        </div>
+      </div>
+      <div class="modulo">
+        <div class="modulo-num"><span>M2</span></div>
+        <div class="modulo-corpo">
+          <p class="modulo-titulo">Metodologia Autoral</p>
+          <p class="modulo-desc">3 aulas · Transformar conhecimento em método · Pilares · Estrutura replicável com nome</p>
+        </div>
+      </div>
+      <div class="modulo">
+        <div class="modulo-num"><span>M3</span></div>
+        <div class="modulo-corpo">
+          <p class="modulo-titulo">Seu Primeiro Produto Digital</p>
+          <p class="modulo-desc">4 aulas · Qual produto criar · Pesquisa em 30 min com IA · Estrutura pedagógica · Nome, promessa e preço</p>
+        </div>
+      </div>
+      <div class="modulo">
+        <div class="modulo-num"><span>M4</span></div>
+        <div class="modulo-corpo">
+          <p class="modulo-titulo">Gravando e Entregando</p>
+          <p class="modulo-desc">3 aulas · Estrutura de aula que converte · Como gravar sem travar · E agora?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IA -->
+<section class="secao">
+  <div class="container">
+    <span class="secao-tag">IA como atalho</span>
+    <h2>A IA elimina<br><em>o que trava.</em></h2>
+    <p style="font-size:15px;color:#888;margin-bottom:8px;line-height:1.8">Em cada módulo, prompts específicos — testados com ChatGPT e Claude — para você executar sem depender de inspiração ou tempo extra.</p>
+    <div class="ia-grid">
+      <div class="ia-card">
+        <p class="ia-card-titulo">DNA em 30 minutos</p>
+        <p class="ia-card-texto">Mapeia o que você faz de único antes de criar qualquer coisa</p>
+      </div>
+      <div class="ia-card">
+        <p class="ia-card-titulo">Pesquisa de nicho</p>
+        <p class="ia-card-texto">Valida o ângulo do produto antes de investir tempo construindo</p>
+      </div>
+      <div class="ia-card">
+        <p class="ia-card-titulo">Revisão pedagógica</p>
+        <p class="ia-card-texto">Revisa a lógica da estrutura antes de gravar uma aula</p>
+      </div>
+      <div class="ia-card">
+        <p class="ia-card-titulo">Nome e promessa</p>
+        <p class="ia-card-texto">Escreve com clareza o que o produto entrega e para quem</p>
+      </div>
+    </div>
+    <div class="destaque-box" style="margin-top:32px">
+      <p>"A IA não cria o produto por você. Ela elimina a folha em branco e o tempo perdido tentando sozinho."</p>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="secao">
+  <div class="container">
+    <span class="secao-tag">Para quem é</span>
+    <h2>Especialistas que<br><em>ainda não vendem digital.</em></h2>
+    <div class="perfis">
+      <div class="perfil-col">
+        <div class="perfil-header sim">Para você se</div>
+        <div class="perfil-item sim">Tem 3+ anos de experiência real na sua área</div>
+        <div class="perfil-item sim">Ainda não tem produto digital estruturado</div>
+        <div class="perfil-item sim">Tem muitas ideias e não sabe por qual começar</div>
+        <div class="perfil-item sim">Quer usar IA sem precisar entender de tecnologia</div>
+        <div class="perfil-item sim">Tem pouco tempo e precisa de um caminho direto</div>
+      </div>
+      <div class="perfil-col" style="border-left:1px solid var(--borda)">
+        <div class="perfil-header nao">Não é para você se</div>
+        <div class="perfil-item nao">Quer fórmula rápida sem trabalhar o conhecimento</div>
+        <div class="perfil-item nao">Busca resultado sem as 3 horas semanais reais</div>
+        <div class="perfil-item nao">Já tem produto estruturado e quer escalar</div>
+        <div class="perfil-item nao">Não tem experiência real para transformar</div>
+        <div class="perfil-item nao">Quer copiar método de outro — não construir o seu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMAÇÃO -->
+<section class="secao">
+  <div class="container">
+    <span class="secao-tag">De onde você está para onde vai</span>
+    <h2>14 dias de<br><em>diferença real.</em></h2>
+    <div class="transform-grid">
+      <div class="transform-col">
+        <div class="transform-header antes">Antes</div>
+        <div class="transform-row-antes">Muitas ideias, nenhuma estrutura</div>
+        <div class="transform-row-antes">Não sabe o que é único em você</div>
+        <div class="transform-row-antes">Conhecimento no tempo — sem escala</div>
+        <div class="transform-row-antes">Trava na folha em branco</div>
+        <div class="transform-row-antes">Faturamento instável e dependente de horas</div>
+      </div>
+      <div class="transform-col">
+        <div class="transform-header depois">Depois</div>
+        <div class="transform-row-depois">Primeiro produto desenhado e pronto</div>
+        <div class="transform-row-depois">DNA e método com nome e estrutura</div>
+        <div class="transform-row-depois">Conhecimento em formato de ativo digital</div>
+        <div class="transform-row-depois">IA como atalho em cada etapa</div>
+        <div class="transform-row-depois">Primeira fonte de receita digital ativa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMO PASSO -->
+<section class="secao">
+  <div class="container">
+    <span class="secao-tag">O produto é a porta</span>
+    <h2>Não o<br><em>destino.</em></h2>
+    <div class="proximo-box">
+      <h3>Diagnóstico Estratégico incluso</h3>
+      <p>Todo comprador recebe acesso a um <strong>Diagnóstico Estratégico direto com Anna Neves</strong> — análise real do que você construiu, com Matriz SWOT completa e direcionamento para os próximos passos específicos do seu caso.</p>
+      <p>Se houver alinhamento, você recebe um convite para a <strong>Consultoria de Bolso</strong> — 90 minutos ao vivo, com devolutiva escrita e estratégia personalizada.</p>
+      <p style="font-size:13px;color:#555;margin-bottom:0">Ative enviando a palavra-chave <strong style="color:var(--dourado)">DIAGNÓSTICO</strong> + nome + e-mail de compra:</p>
+      <a href="https://wa.me/message/VGMJT5MAEJDUO1" class="proximo-wpp" target="_blank">→ Ativar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ANNA -->
+<section class="secao">
+  <div class="container">
+    <span class="secao-tag">Quem criou este programa</span>
+    <div class="anna-grid">
+      <div class="anna-avatar"><span>AN</span></div>
+      <div>
+        <p class="anna-nome">Anna Neves</p>
+        <p class="anna-cargo">Estrategista de Ecossistemas Digitais</p>
+        <p class="anna-bio">Mais de 10 anos transformando o conhecimento de especialistas em metodologias próprias e produtos digitais escaláveis. O que diferencia este programa: não é metodologia teórica — é o mesmo processo usado em consultorias de R$30k, adaptado para você executar em 14 dias, com IA, no tempo disponível.</p>
+        <div class="anna-numeros">
+          <div class="anna-num">
+            <span class="anna-num-val">400+</span>
+            <span class="anna-num-label">produtos criados</span>
+          </div>
+          <div class="anna-num">
+            <span class="anna-num-val">17</span>
+            <span class="anna-num-label">países</span>
+          </div>
+          <div class="anna-num">
+            <span class="anna-num-val">10+</span>
+            <span class="anna-num-label">anos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA PRINCIPAL -->
+<section class="cta-box">
+  <div class="container">
+    <p class="cta-box-nome">Do Conhecimento ao Produto</p>
+    <p class="cta-box-sub">em 14 dias · 3 horas por semana · com IA</p>
+    <div class="cta-preco">
+      <span class="cta-preco-label">investimento</span>
+      <span class="cta-preco-val">R$97</span>
+      <span class="cta-preco-detalhe">acesso por 12 meses · 14 aulas · PDFs de apoio · Diagnóstico incluso</span>
+    </div>
+    <a href="https://payfast.greenn.com.br/x77xwe7" class="cta-btn">QUERO MEU PRIMEIRO PRODUTO DIGITAL</a>
+    <span class="cta-garantia">7 dias de garantia incondicional · Devolução sem perguntas</span>
+    <div class="cta-itens">
+      <span class="cta-item">14 aulas em vídeo</span>
+      <span class="cta-item">PDFs de apoio</span>
+      <span class="cta-item">Prompts de IA</span>
+      <span class="cta-item">Diagnóstico estratégico</span>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="secao">
+  <div class="container">
+    <span class="secao-tag">Garantia</span>
+    <div class="garantia-box">
+      <h3>7 dias. Sem perguntas.</h3>
+      <p>Se você assistir às aulas, fizer os exercícios e sentir que o programa não entregou o que prometeu, devolvo <strong>100% do valor</strong> — sem perguntas e sem burocracia.</p>
+      <p style="margin-top:12px">A garantia existe porque o programa funciona quando você executa. Não é promessa vazia — é confiança no método.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="secao">
+  <div class="container">
+    <span class="secao-tag">Perguntas frequentes</span>
+    <h2>Dúvidas<br><em>comuns.</em></h2>
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-pergunta">Preciso saber usar IA para participar?</p>
+        <p class="faq-resposta">Não. Os prompts estão prontos e funcionam com ChatGPT e Claude. Você copia, cola e usa — sem precisar entender de tecnologia.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-pergunta">3 horas por semana é real?</p>
+        <p class="faq-resposta">Sim. O programa foi desenhado para quem trabalha muito e tem pouco tempo. São 14 aulas de 7 a 14 minutos cada, mais exercícios guiados. Você avança no seu ritmo dentro da janela de 14 dias.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-pergunta">Já tenho um produto. Este programa é para mim?</p>
+        <p class="faq-resposta">Se o produto já está estruturado e você quer escalar, este programa não é para você — ele é o primeiro passo. Se o produto existe mas é vago, sem método claro ou sem estrutura, sim.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-pergunta">O que inclui o acesso?</p>
+        <p class="faq-resposta">14 aulas em vídeo + PDFs de apoio em cada módulo + acesso por 12 meses + Diagnóstico Estratégico ativado pelo WhatsApp após a compra.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-pergunta">O que é o Diagnóstico Estratégico?</p>
+        <p class="faq-resposta">Uma análise pessoal feita por Anna Neves com base nas suas respostas a 9 perguntas. Você recebe uma Matriz SWOT completa, temperatura do seu produto e os próximos passos específicos para o seu caso. Incluso para todos os compradores.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section class="cta-box" style="border-top:1px solid var(--borda)">
+  <div class="container">
+    <p style="font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,28px);color:#fff;font-style:italic;margin-bottom:32px;line-height:1.5">"Conhecimento é ativo.<br>Não ocupação."</p>
+    <a href="https://payfast.greenn.com.br/x77xwe7" class="cta-btn">COMEÇAR AGORA — R$97</a>
+    <span class="cta-garantia" style="margin-top:12px;display:block">annanevesmetodo.com.br</span>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">ANNA NEVES</span>
+  <span class="footer-slogan">Menos ruído. Mais estratégia.</span>
+</footer>
+
+</body>
+</html>
