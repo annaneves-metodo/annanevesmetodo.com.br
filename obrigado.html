@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compra confirmada — Anna Neves</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0B0B;
+    --ivory:#F5F1EB;
+    --gold:#B1976B;
+    --gold-dark:#97774e;
+    --gray:#2F2F2F;
+    --muted:rgba(11,11,11,.58);
+    --line:rgba(11,11,11,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Poppins',Arial,sans-serif;
+    font-weight:300;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    padding:0 22px;
+  }
+  .wrap{
+    max-width:600px;
+    margin:0 auto;
+    padding:72px 0 56px;
+  }
+  .reveal{opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  .reveal.d1{animation-delay:.08s}
+  .reveal.d2{animation-delay:.2s}
+  .reveal.d3{animation-delay:.34s}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-weight:500;
+    color:var(--gold-dark);
+  }
+
+  /* ---- confirmation ---- */
+  .mark{
+    width:46px;height:46px;border:1px solid var(--gold);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-bottom:30px;
+  }
+  .mark svg{width:20px;height:20px;stroke:var(--gold);stroke-width:1.5;fill:none}
+  h1{
+    font-family:'Lora',Georgia,serif;
+    font-weight:500;
+    font-size:clamp(30px,7vw,42px);
+    line-height:1.16;
+    letter-spacing:-.01em;
+    margin:14px 0 18px;
+  }
+  .lede{font-size:16px;color:var(--gray);max-width:40ch}
+  .lede strong{font-weight:500;color:var(--ink)}
+
+  .rule{height:1px;background:var(--line);margin:52px 0;border:0}
+  .rule.gold{background:linear-gradient(90deg,var(--gold),transparent);height:2px;max-width:88px;margin:52px 0 34px}
+
+  /* ---- bridge / offer ---- */
+  h2{
+    font-family:'Lora',Georgia,serif;
+    font-weight:500;
+    font-size:clamp(24px,5.5vw,30px);
+    line-height:1.22;
+    letter-spacing:-.01em;
+    margin:12px 0 16px;
+  }
+  .body{font-size:16px;color:var(--gray);margin-bottom:14px;max-width:46ch}
+
+  .card{
+    background:var(--ink);
+    color:var(--ivory);
+    border-radius:4px;
+    padding:38px 34px;
+    margin:38px 0 30px;
+  }
+  .card .eyebrow{color:var(--gold)}
+  .card h3{
+    font-family:'Lora',Georgia,serif;
+    font-weight:500;
+    font-size:26px;
+    margin:12px 0 16px;
+    color:var(--ivory);
+  }
+  .card p{font-size:15px;color:rgba(245,241,235,.78);font-weight:300}
+  .specs{
+    list-style:none;margin:22px 0 4px;
+    border-top:1px solid rgba(245,241,235,.14);
+  }
+  .specs li{
+    font-size:13.5px;color:rgba(245,241,235,.82);
+    padding:13px 0;border-bottom:1px solid rgba(245,241,235,.14);
+    display:flex;align-items:center;gap:12px;
+  }
+  .specs li::before{content:"";width:5px;height:5px;background:var(--gold);border-radius:50%;flex:none}
+  .price{
+    display:flex;align-items:baseline;gap:10px;margin-top:26px;
+  }
+  .price .val{font-family:'Lora',serif;font-size:38px;font-weight:600;color:var(--ivory);letter-spacing:-.01em}
+  .price .note{font-size:12px;letter-spacing:.04em;color:rgba(245,241,235,.6)}
+
+  .cta{
+    display:block;width:100%;text-align:center;
+    background:var(--gold);color:var(--ink);
+    font-family:'Poppins',sans-serif;font-weight:600;font-size:15.5px;
+    letter-spacing:.01em;text-decoration:none;
+    padding:18px 22px;border-radius:3px;border:none;cursor:pointer;
+    transition:background .25s ease,transform .25s ease;
+  }
+  .cta:hover{background:var(--gold-dark)}
+  .cta:active{transform:translateY(1px)}
+  .cta:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  .reassure{text-align:center;font-size:12.5px;color:var(--muted);margin-top:14px}
+
+  /* ---- close ---- */
+  .close{margin-top:54px}
+  .close .line{
+    font-family:'Lora',Georgia,serif;font-style:italic;font-weight:400;
+    font-size:clamp(19px,4.6vw,23px);line-height:1.4;color:var(--ink);
+    max-width:30ch;
+  }
+  .sign{margin-top:30px;display:flex;align-items:center;gap:14px}
+  .sign .nm{font-family:'Lora',serif;font-size:16px;font-weight:500}
+  .sign .tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dark)}
+  .sign .bar{width:26px;height:1px;background:var(--gold)}
+
+  @media (prefers-reduced-motion:reduce){
+    .reveal{animation:none;opacity:1;transform:none}
+  }
+  @media (max-width:480px){
+    .wrap{padding:52px 0 44px}
+    .card{padding:30px 22px}
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+
+    <section class="reveal">
+      <div class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><polyline points="4 12.5 10 18 20 6"></polyline></svg>
+      </div>
+      <p class="eyebrow">Anna Neves · Estratégia Digital &amp; Ecossistemas de Conhecimento</p>
+      <h1>Sua compra está confirmada.</h1>
+      <p class="lede">Você acabou de dar um passo que a maioria adia: parar de acumular conhecimento e começar a transformá-lo em estrutura. <strong>O acesso ao material chega no seu e-mail em instantes</strong> — confere também a caixa de spam ou promoções.</p>
+    </section>
+
+    <hr class="rule">
+
+    <section class="reveal d1">
+      <p class="eyebrow">O próximo passo</p>
+      <h2>Você já tem o mapa. Quer que eu leia o seu caso?</h2>
+      <p class="body">O material te mostra o caminho. Mas todo especialista tem um ponto cego — um gargalo que não se enxerga de dentro.</p>
+      <p class="body">O Diagnóstico Estratégico é onde eu olho diretamente para o seu cenário e te digo, com clareza, o que construir primeiro.</p>
+    </section>
+
+    <section class="reveal d2">
+      <div class="card">
+        <p class="eyebrow">Diagnóstico Estratégico</p>
+        <h3>O seu mapa, com a sua letra.</h3>
+        <p>Uma sessão. Eu analiso o seu momento, nomeio o gargalo central e te entrego um direcionamento real — aplicado ao seu negócio. Não é teoria. É arquitetura para o que você vai construir a seguir.</p>
+        <ul class="specs">
+          <li>Sessão individual com a Anna</li>
+          <li>Leitura estratégica do seu caso específico</li>
+          <li>Documento-síntese com o direcionamento</li>
+        </ul>
+        <div class="price">
+          <span class="val">R$297</span>
+          <span class="note">investimento único</span>
+        </div>
+      </div>
+
+      <a class="cta" href="https://payfast.greenn.com.br/178891/offer/OZSn6e">Quero meu Diagnóstico Estratégico</a>
+      <p class="reassure">Pagamento seguro · Ambiente Green</p>
+    </section>
+
+    <hr class="rule gold">
+
+    <section class="close reveal d3">
+      <p class="line">É exatamente nesse ponto que o meu trabalho começa.</p>
+      <div class="sign">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="nm">Anna Neves</span>
+        <span class="tag">Menos ruído. Mais estratégia.</span>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
