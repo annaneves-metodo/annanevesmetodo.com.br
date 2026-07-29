@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Estratégico · Anna Neves</title>
+<style>
+  :root{--preto:#0B0B0B;--dourado:#B1976B;--marfim:#F5F1EB;--cinza:#6b6b6b;--linha:#d9cfc0;--areia:#EFE7DA;--verde:#4b7d5b;--vermelho:#8a4b4b;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:Arial,Helvetica,sans-serif;color:var(--preto);background:var(--marfim);line-height:1.6;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+  a.btn{display:inline-block;text-decoration:none;font-weight:bold;font-size:14px;padding:14px 26px;border-radius:3px;letter-spacing:.3px;}
+  .btn-gold{background:var(--dourado);color:var(--preto);}
+  .btn-ghost{background:transparent;color:var(--marfim);border:1px solid var(--dourado);}
+  .btn-dark{background:var(--preto);color:var(--marfim);}
+  .kick{color:var(--dourado);letter-spacing:2px;font-size:11px;font-weight:bold;text-transform:uppercase;margin-bottom:10px;}
+  h2{font-size:28px;line-height:1.2;margin-bottom:8px;}
+  .hrule{width:54px;height:3px;background:var(--dourado);margin:12px 0 24px;}
+  p{font-size:15px;margin-bottom:14px;}
+  section{padding:56px 0;}
+  section.alt{background:#fff;}
+
+  /* NAV */
+  nav{background:var(--preto);color:var(--marfim);padding:16px 0;position:sticky;top:0;z-index:10;}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;}
+  nav .brand{font-weight:bold;font-size:15px;}
+  nav .brand span{color:var(--dourado);font-weight:normal;font-size:12px;display:block;letter-spacing:1px;}
+  nav a.btn{padding:10px 18px;}
+
+  /* HERO */
+  .hero{background:var(--preto);color:var(--marfim);padding:70px 0 66px;}
+  .hero .tag{color:var(--dourado);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;}
+  .hero h1{font-size:44px;line-height:1.12;margin-bottom:22px;}
+  .hero h1 .g{color:var(--dourado);}
+  .hero p{font-size:17px;color:#d8d2c6;max-width:680px;margin-bottom:28px;}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px;}
+  .hero .fine{font-size:13px;color:#8f887c;font-style:italic;}
+
+  /* CREDENCIAIS */
+  .cred{background:var(--areia);}
+  .cred .wrap{display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between;}
+  .cred .who{font-size:14px;color:#444;max-width:280px;}
+  .cred .nums{display:flex;gap:34px;flex-wrap:wrap;}
+  .cred .n b{display:block;font-size:30px;color:var(--preto);}
+  .cred .n span{font-size:12px;color:var(--cinza);}
+
+  /* LISTAS NUMERADAS */
+  .items{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px;}
+  .item{background:var(--areia);border-left:3px solid var(--dourado);padding:14px 16px;border-radius:0 3px 3px 0;}
+  .item .n{color:var(--dourado);font-weight:bold;font-size:13px;}
+  .item p{font-size:14px;margin:4px 0 0;}
+
+  .quote{background:var(--preto);color:var(--marfim);padding:30px 32px;border-radius:3px;margin:8px 0;}
+  .quote .big{font-size:22px;font-style:italic;color:#fff;margin-bottom:8px;}
+  .quote .small{font-size:14px;color:#c9c1b4;margin:0;}
+
+  .proc{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px;}
+  .proc .p{background:#fff;border-top:3px solid var(--dourado);padding:18px 20px;border-radius:3px;}
+  .proc .p .n{color:var(--dourado);font-weight:bold;font-size:13px;}
+  .proc .p h4{font-size:17px;margin:4px 0 6px;}
+  .proc .p p{font-size:14px;margin:0;color:#333;}
+
+  .ativos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;}
+  .ativo{display:flex;gap:12px;align-items:flex-start;font-size:14px;}
+  .ativo .t{color:var(--dourado);font-weight:bold;flex:none;}
+
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:10px;}
+  .col{background:#fff;border-radius:3px;padding:20px 22px;}
+  .col.sim{border-top:3px solid var(--verde);}
+  .col.nao{border-top:3px solid var(--vermelho);}
+  .col h4{font-size:16px;margin-bottom:12px;}
+  .col ul{list-style:none;} .col li{font-size:14px;padding:8px 0;border-bottom:1px solid var(--linha);}
+  .col li:last-child{border-bottom:none;}
+
+  .depos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px;max-width:800px;margin-left:auto;margin-right:auto;}
+  .dep{background:var(--areia);padding:18px 20px;border-radius:3px;}
+  .dep p{font-size:14px;font-style:italic;margin-bottom:10px;}
+  .dep .a{font-size:12.5px;font-weight:bold;color:var(--preto);}
+  .dep .a span{display:block;font-weight:normal;color:var(--cinza);}
+
+  /* PASSOS / OFERTA */
+  .passos{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px;}
+  .passo{background:#fff;border-radius:3px;padding:24px 26px;border:1px solid var(--linha);}
+  .passo.hot{background:var(--preto);color:var(--marfim);border:none;}
+  .passo .badge{display:inline-block;font-size:11px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;background:var(--dourado);color:var(--preto);margin-bottom:12px;}
+  .passo h3{font-size:21px;margin-bottom:4px;}
+  .passo.hot h3{color:#fff;}
+  .passo .price{font-size:30px;font-weight:bold;color:var(--dourado);margin-bottom:2px;}
+  .passo .price small{font-size:13px;color:#c9c1b4;font-weight:normal;}
+  .passo ul{list-style:none;margin:14px 0 18px;}
+  .passo li{font-size:14px;padding:7px 0 7px 20px;position:relative;}
+  .passo li:before{content:"›";position:absolute;left:2px;color:var(--dourado);font-weight:bold;}
+  .passo.hot li{color:#e8e2d7;}
+  .abatido{font-size:13px;color:var(--dourado);font-style:italic;margin-top:8px;}
+  .agenda{background:var(--areia);border-radius:3px;padding:16px 20px;margin-top:18px;font-size:14px;color:#444;}
+
+  .faq details{background:#fff;border-radius:3px;margin-bottom:10px;padding:0 20px;border:1px solid var(--linha);}
+  .faq summary{font-size:15px;font-weight:bold;padding:16px 0;cursor:pointer;list-style:none;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary:before{content:"+ ";color:var(--dourado);font-weight:bold;}
+  .faq details[open] summary:before{content:"– ";}
+  .faq p{font-size:14px;color:#333;padding-bottom:16px;margin:0;}
+
+  .final{background:var(--preto);color:var(--marfim);text-align:center;}
+  .final h2{font-size:30px;max-width:720px;margin:0 auto 16px;}
+  .final p{color:#c9c1b4;max-width:620px;margin:0 auto 26px;}
+
+  footer{background:#070707;color:#8f887c;text-align:center;padding:28px 0;font-size:12px;}
+  footer .sig{color:var(--dourado);letter-spacing:1px;display:block;margin-bottom:6px;}
+
+  @media(max-width:680px){
+    .items,.proc,.ativos,.cols2,.passos{grid-template-columns:1fr;}
+    .depos{grid-template-columns:1fr;}
+    .hero h1{font-size:34px;} h2{font-size:24px;}
+  }
+</style></head>
+<body>
+
+<nav><div class="wrap">
+  <div class="brand">Anna Neves<span>Menos ruído. Mais estratégia.</span></div>
+  <a class="btn btn-gold" href="https://payfast.greenn.com.br/apfjfym">Agendar diagnóstico</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="tag">Consultoria 1:1 · Especialistas</div>
+  <h1>O seu conhecimento vale milhões.<br><span class="g">Enquanto ele estiver só na sua cabeça, vale uma hora por vez.</span></h1>
+  <p>Eu extraio o raciocínio que você já usa no automático, transformo em um método autoral com o seu nome — estrutura, linguagem e propriedade intelectual — e desenho o ecossistema de produtos digitais que vende esse método sem exigir você em cada entrega.</p>
+  <div class="cta">
+    <a class="btn btn-gold" href="https://payfast.greenn.com.br/apfjfym">Agendar diagnóstico</a>
+    <a class="btn btn-ghost" href="#como-comecar">Como funciona →</a>
+  </div>
+  <div class="fine">Diagnóstico de 90 minutos, individual. Se fizer sentido para os dois lados, é o primeiro passo da consultoria.</div>
+</div></header>
+
+<section class="cred"><div class="wrap">
+  <div class="who"><b>Anna Neves</b> — estrategista de produtos digitais e ecossistemas de conhecimento.</div>
+  <div class="nums">
+    <div class="n"><b>400+</b><span>produtos digitais criados</span></div>
+    <div class="n"><b>10 anos</b><span>formando especialistas</span></div>
+    <div class="n"><b>17 países</b><span>metodologia aplicada</span></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kick">O diagnóstico honesto</div>
+  <h2>Você não tem um problema de marketing.<br>Você tem um problema de arquitetura.</h2>
+  <div class="hrule"></div>
+  <p>Especialistas raramente travam por falta de conhecimento. Travam porque o conhecimento está espalhado: em anotações, aulas soltas, mentorias, intuição. E o que não tem estrutura não pode ser vendido duas vezes.</p>
+  <div class="items">
+    <div class="item"><div class="n">01</div><p>Você sabe entregar resultado, mas não sabe explicar o seu método.</p></div>
+    <div class="item"><div class="n">02</div><p>A sua receita depende de trocar horas por dinheiro.</p></div>
+    <div class="item"><div class="n">03</div><p>Qualquer concorrente consegue copiar a sua oferta em uma semana.</p></div>
+    <div class="item"><div class="n">04</div><p>Cada nova venda recomeça do zero. Não existe ativo acumulando valor.</p></div>
+    <div class="item"><div class="n">05</div><p>Escalar significaria atender mais gente. E não cabe mais gente na sua agenda.</p></div>
+    <div class="item"><div class="n">06</div><p>O seu negócio para quando você para. Ele é você, não uma estrutura.</p></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="kick">A frase que eu mais escuto</div>
+  <div class="quote">
+    <div class="big">“Eu não tenho nada de único. É só o que eu faço todo dia.”</div>
+    <p class="small">É exatamente por isso que ninguém consegue comprar de você. O que você faz todo dia está tão internalizado que virou invisível. E o que é invisível não tem nome, não tem estrutura, não tem preço e não pode ser licenciado.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kick">O algoritmo mental</div>
+  <h2>Você tem uma lógica de decisão que repete sem perceber.</h2>
+  <div class="hrule"></div>
+  <p>É o motivo real do seu resultado. Meu trabalho é tornar esse raciocínio explícito: mapear os padrões, nomear as etapas, definir critérios, transformar em um método que só existe porque você existe. Não é um curso sobre o que você sabe. É a propriedade intelectual do jeito como você pensa.</p>
+  <p><strong>Conhecimento sem arquitetura vale menos a cada ano.</strong> Com a IA, informação genérica virou commodity. O que continua raro é método autoral. E método é estrutura, não talento.</p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="kick">O processo</div>
+  <h2>Quatro movimentos, feitos comigo, um a um.</h2>
+  <div class="hrule"></div>
+  <p>Consultoria individual. Eu não entrego template: eu extraio, escrevo e arquiteto junto com você.</p>
+  <div class="proc">
+    <div class="p"><div class="n">01</div><h4>Mapa do seu diferencial real</h4><p>Separamos o que é técnica comum do que é só seu. Aqui aparece o que o mercado ainda não sabe cobrar de você. O posicionamento deixa de ser adjetivo e passa a ser fato.</p></div>
+    <div class="p"><div class="n">02</div><h4>Extração do seu raciocínio</h4><p>Conduzo sessões que fazem você verbalizar decisões que hoje são intuição. O resultado é um método nomeado, com etapas, critérios e sequência: documentado, defensável, impossível de copiar sem virar plágio.</p></div>
+    <div class="p"><div class="n">03</div><h4>Arquitetura do ecossistema</h4><p>Do método saem os produtos: entrada, núcleo, premium, recorrência, licenciamento. Cada um com promessa, preço e função dentro da escada. Não é uma coleção de cursos soltos.</p></div>
+    <div class="p"><div class="n">04</div><h4>Estrutura que roda sem você</h4><p>Definimos o que só você faz e o que a estrutura faz: entrega, sistemas, automação, time enxuto. Você passa a ser dono de um ativo, não o gargalo dele.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kick">O que fica com você</div>
+  <h2>A sociedade termina. A metodologia fica.</h2>
+  <div class="hrule"></div>
+  <p>Você não sai da consultoria com um plano para executar depois. Sai com os ativos prontos, escritos, no seu nome.</p>
+  <div class="ativos">
+    <div class="ativo"><span class="t">01</span><span>Método autoral nomeado e documentado</span></div>
+    <div class="ativo"><span class="t">02</span><span>Propriedade intelectual estruturada e registrável</span></div>
+    <div class="ativo"><span class="t">03</span><span>Arquitetura completa do ecossistema de produtos</span></div>
+    <div class="ativo"><span class="t">04</span><span>Conteúdo e narrativa escritos, não terceirizados</span></div>
+    <div class="ativo"><span class="t">05</span><span>Escada de preços e plano comercial</span></div>
+    <div class="ativo"><span class="t">06</span><span>Modelo de operação enxuta e licenciamento</span></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="kick">Para quem é</div>
+  <h2>Isto é um trabalho de extração profunda. Não serve para todo mundo.</h2>
+  <div class="hrule"></div>
+  <div class="cols2">
+    <div class="col sim"><h4>É para você se</h4><ul>
+      <li>Você já entrega resultado real e tem repertório de casos.</li>
+      <li>Você quer sair da venda de horas sem baixar o padrão da entrega.</li>
+      <li>Você quer um produto premium e um diferencial que se sustente sozinho.</li>
+      <li>Você está disposto ao processo de extração, que é profundo.</li>
+    </ul></div>
+    <div class="col nao"><h4>Não é para você se</h4><ul>
+      <li>Você ainda não pratica o que quer ensinar.</li>
+      <li>Você quer um lançamento rápido, não um patrimônio intelectual.</li>
+      <li>Você espera que alguém execute no seu lugar sem a sua cabeça na mesa.</li>
+      <li>Você procura tráfego, edição ou gestão de redes. Não é o meu trabalho.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kick">Resultados</div>
+  <h2>O que acontece quando o conhecimento ganha estrutura.</h2>
+  <div class="hrule"></div>
+  <div class="depos">
+    <div class="dep"><p>“O trabalho com a Anna transformou toda a essência do que acredito sobre Saúde Mental em uma presença digital clara, acolhedora e profissional. A comunicação passou a transmitir com muito mais força o propósito do método e a segurança que eu queria oferecer às pessoas desde o primeiro contato. Ficou sensível, sofisticado e totalmente alinhado à forma como conduzo meu trabalho.”</p><div class="a">Dra. Luciana Arcos<span>Médica psiquiatra · criadora do método SYNNCO</span></div></div>
+    <div class="dep"><p>“Você pegou anos da minha história com o método Phorma — todo produto, todo conhecimento — e transformou num ecossistema de verdade. Não é só um produto digital: agora virou um legado. Tudo estruturado com muito cuidado e profissionalismo.”</p><div class="a">Paulo<span>Criador do método Phorma</span></div></div>
+  </div>
+</div></section>
+
+<section class="alt" id="como-comecar"><div class="wrap">
+  <div class="kick">Como começar</div>
+  <h2>Ninguém entra na consultoria sem antes ser diagnosticado.</h2>
+  <div class="hrule"></div>
+  <p>O diagnóstico é pago de propósito. Ele filtra curiosidade, entrega valor sozinho e me dá a leitura necessária para dizer se a consultoria faz sentido para você — ou se não faz.</p>
+  <div class="passos">
+    <div class="passo hot">
+      <div class="badge">Passo 1 · Disponível agora</div>
+      <h3>Diagnóstico Estratégico</h3>
+      <div class="price">R$ 500 <small>· sessão única · 90 min</small></div>
+      <p style="color:#c9c1b4;font-size:14px;margin-top:14px;">Você sai com o <strong style="color:#fff;">Dossiê de Diagnóstico Estratégico</strong>, escrito a partir da sua sessão e entregue em até 48h:</p>
+      <ul>
+        <li>Onde você está — a leitura do seu conhecimento e do gargalo real.</li>
+        <li>Seu diferencial invisível — o que só você tem.</li>
+        <li>O esboço do seu método — nome provisório e primeiras etapas.</li>
+        <li>Direção de ecossistema — a sua escada de produtos.</li>
+        <li>Próximo passo — a recomendação priorizada, mesmo que você não siga comigo.</li>
+      </ul>
+      <a class="btn btn-gold" href="https://payfast.greenn.com.br/apfjfym">Quero o diagnóstico · R$ 500</a>
+    </div>
+    <div class="passo">
+      <div class="badge">Passo 2 · Por convite</div>
+      <h3>Consultoria 1:1</h3>
+      <div class="price" style="color:var(--preto);">Apresentada <small style="color:var(--cinza);">no diagnóstico</small></div>
+      <ul>
+        <li>Processo completo: diferencial, extração, ecossistema e operação.</li>
+        <li>Conteúdo e documentação escritos junto com você, não delegados.</li>
+        <li>Poucas vagas por trimestre: é trabalho individual, não escala.</li>
+      </ul>
+      <p class="abatido">O valor do diagnóstico é abatido no investimento da consultoria.</p>
+    </div>
+  </div>
+  <div class="agenda"><strong>Agenda:</strong> abro um número limitado de diagnósticos por mês. Quando fecha, entra lista de espera.</div>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <div class="kick">Antes que você pense nisso</div>
+  <h2>As dúvidas que travam quase todo especialista.</h2>
+  <div class="hrule"></div>
+  <details><summary>“Meu conhecimento não é suficiente para virar um método.”</summary><p>Se você resolve o mesmo tipo de problema há anos, o método já existe. Só não está escrito. Falta linguagem, não competência.</p></details>
+  <details><summary>“Preciso estudar mais antes de estruturar isso.”</summary><p>Estudar mais aumenta repertório, não diferenciação. O que te diferencia é o seu critério de decisão, e ele já está pronto.</p></details>
+  <details><summary>“Meu diferencial é o atendimento, não um método.”</summary><p>Atendimento excelente também é um processo com regras. Quando essas regras ficam explícitas, elas deixam de ser esforço seu e passam a ser padrão do seu negócio.</p></details>
+  <details><summary>“O mercado compra marketing, não metodologia.”</summary><p>Marketing vende a primeira vez. Metodologia sustenta preço, recompra, autoridade e licenciamento. Sem ela, você paga tráfego para sempre.</p></details>
+  <details><summary>“Preciso escrever um livro ou lançar um curso primeiro?”</summary><p>Não. Livro e curso são consequências do método. Na ordem inversa, você produz material e continua sem ativo.</p></details>
+  <details><summary>“Meu conhecimento é impossível de organizar.”</summary><p>Ninguém consegue enxergar o próprio padrão de dentro. É para isso que existe alguém do lado de fora conduzindo a extração.</p></details>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>O seu conhecimento pode terminar com você ou virar patrimônio.</h2>
+  <p>Se você chegou até aqui, provavelmente já sabe que o problema não é falta de conteúdo. É falta de estrutura. É exatamente nesse ponto que o meu trabalho começa.</p>
+  <a class="btn btn-gold" href="https://payfast.greenn.com.br/apfjfym">Agendar diagnóstico · R$ 500</a>
+</div></section>
+
+<footer>
+  <span class="sig">MENOS RUÍDO. MAIS ESTRATÉGIA.</span>
+  Anna Neves · Estratégia de produtos digitais e ecossistemas de conhecimento
+</footer>
+
+</body></html>
