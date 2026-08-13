@@ -4,20 +4,21 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:Arial,Helvetica,sans-serif;background:#F5F1EB;color:#0B0B0B;line-height:1.55;}
 .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
-.top{text-align:center;padding:34px 0 10px;}
+.top{text-align:center;padding:34px 0 6px;}
 .kick{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#B1976B;font-weight:bold;}
-h1{font-size:34px;line-height:1.12;margin:14px 0 12px;letter-spacing:-.5px;}
+h1{font-size:35px;line-height:1.12;margin:14px 0 14px;letter-spacing:-.6px;}
 h1 .g{color:#B1976B;}
-.promise{font-size:18px;color:#333;max-width:620px;margin:0 auto 8px;}
-.vsl{background:#0B0B0B;border-radius:12px;margin:26px 0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:#B1976B;font-size:14px;letter-spacing:1px;text-transform:uppercase;border:1px solid #2a2a2a;position:relative;}
+.promise{font-size:18px;color:#333;max-width:640px;margin:0 auto 8px;}
+.vsl{background:#0B0B0B;border-radius:12px;margin:24px 0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:#B1976B;font-size:14px;letter-spacing:1px;text-transform:uppercase;border:1px solid #2a2a2a;position:relative;}
 .vsl:before{content:"▶";font-size:34px;position:absolute;color:#B1976B;opacity:.5;}
 .vsl span{position:absolute;bottom:14px;font-size:11px;color:#8a8a8a;letter-spacing:1px;}
-.cta{display:block;background:#0B0B0B;color:#F5F1EB;text-align:center;text-decoration:none;padding:18px 24px;border-radius:10px;font-size:18px;font-weight:bold;margin:22px auto;max-width:460px;letter-spacing:.3px;}
+.cta{display:block;background:#0B0B0B;color:#F5F1EB;text-align:center;text-decoration:none;padding:18px 24px;border-radius:10px;font-size:18px;font-weight:bold;margin:22px auto;max-width:490px;letter-spacing:.3px;}
 .cta small{display:block;font-size:12px;color:#B1976B;font-weight:normal;letter-spacing:1px;text-transform:uppercase;margin-top:4px;}
-.rule{height:2px;width:56px;background:#B1976B;margin:30px auto;}
-h2{font-size:22px;text-align:center;margin:8px 0 16px;}
+.rule{height:2px;width:56px;background:#B1976B;margin:28px auto;}
+h2{font-size:22px;text-align:center;margin:8px 0 14px;line-height:1.25;}
 .card{background:#fff;border:1px solid #e3dccd;border-radius:12px;padding:20px 24px;margin:14px 0;}
-.card h3{font-size:16px;color:#B1976B;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;}
+.card p{font-size:15.5px;}
+.card p + p{margin-top:10px;}
 .steps{display:flex;flex-direction:column;gap:12px;margin:16px 0;}
 .step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #e3dccd;border-radius:10px;padding:15px 18px;}
 .step .n{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:#B1976B;color:#fff;text-align:center;line-height:30px;font-weight:bold;}
@@ -28,14 +29,15 @@ h2{font-size:22px;text-align:center;margin:8px 0 16px;}
 .forwho ul{list-style:none;}
 .forwho li{position:relative;padding-left:22px;margin-bottom:9px;font-size:15px;}
 .forwho li:before{content:"✓";position:absolute;left:0;color:#B1976B;font-weight:bold;}
-.price{text-align:center;margin:26px 0 6px;}
+.deliver{background:#F5F1EB;border:2px solid #B1976B;border-radius:12px;padding:20px 24px;margin:22px 0;text-align:center;}
+.deliver .t{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#B1976B;font-weight:bold;margin-bottom:6px;}
+.deliver .p{font-size:17px;font-weight:bold;}
+.anchor{text-align:center;font-size:15px;color:#555;max-width:560px;margin:24px auto 4px;}
+.price{text-align:center;margin:8px 0 6px;}
 .price .parc{font-size:40px;font-weight:400;color:#0B0B0B;line-height:1.1;}
 .price .parc b{font-weight:bold;color:#B1976B;}
 .price .v{font-size:17px;font-weight:bold;color:#333;margin-top:2px;}
 .price .d{font-size:14px;color:#6b6b6b;margin-top:6px;}
-.deliver{background:#F5F1EB;border:2px solid #B1976B;border-radius:12px;padding:20px 24px;margin:20px 0;text-align:center;}
-.deliver .t{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#B1976B;font-weight:bold;margin-bottom:6px;}
-.deliver .p{font-size:17px;font-weight:bold;}
 .faq{margin:16px 0;}
 .faq .q{font-weight:bold;font-size:15px;margin-top:14px;}
 .faq .a{font-size:14px;color:#444;}
@@ -46,61 +48,63 @@ h2{font-size:22px;text-align:center;margin:8px 0 16px;}
 
 <div class="top">
 <div class="kick">Anna Neves · Consultoria de Bolso</div>
-<h1>Saia de onde você está com<br>um <span class="g">plano prático de 3 meses</span> na mão</h1>
-<div class="promise">30 minutos comigo, direto ao ponto. Você me traz o seu momento; eu te devolvo o caminho: um plano de ação de 3 meses, feito pra você executar.</div>
+<h1>Você é especialista na sua área.<br>Só falta saber <span class="g">por onde começar.</span></h1>
+<div class="promise">Em 30 minutos comigo, você sai com um Plano Prático de Ação pros próximos 3 meses: o passo a passo pra tirar o seu negócio digital do papel, sabendo exatamente o que fazer, onde e como. Sem enrolação, e dá pra começar no mesmo dia.</div>
 </div>
 
 <div class="vsl">VÍDEO<span>[ VSL, gravar e inserir aqui ]</span></div>
 
 <!-- CHECKOUT GREEN (Consultoria de Bolso), trocar aqui se mudar o link -->
-<a href="https://payfast.greenn.com.br/apfjfym/offer/MeVNHV" class="cta">Quero minha Consultoria de Bolso<small>garantir vaga · pagamento seguro · em até 12x</small></a>
+<a href="https://payfast.greenn.com.br/apfjfym/offer/MeVNHV" class="cta">Quero meu Plano Prático de Ação<small>garantir vaga · pagamento seguro · em até 12x</small></a>
 
 <div class="rule"></div>
 
-<h2>Não é mais uma call de "vamos ver". É um plano.</h2>
+<h2>Você não precisa de mais teoria.<br>Precisa de um caminho.</h2>
 <div class="card">
-<p>Você não precisa de mais conteúdo genérico nem de uma reunião pra "se conhecer". Você precisa de <strong>clareza e direção</strong>: saber exatamente o que fazer nos próximos 3 meses pra tirar o seu negócio (ou o seu conhecimento) do lugar. É isso que a Consultoria de Bolso entrega: uma leitura rápida e certeira do seu momento, e um plano prático pra você sair executando.</p>
+<p>Você domina o que faz. O que te trava não é o seu conhecimento, é saber qual é o primeiro passo, o segundo, o terceiro. E enquanto você tenta adivinhar sozinho, o tempo passa e o negócio não sai do lugar.</p>
+<p>Em 30 minutos, eu leio o seu momento de fora, encontro o que está te travando e te entrego o caminho pronto. Um plano simples e prático pros próximos 3 meses, que você começa a executar no mesmo dia. Sem enrolação.</p>
 </div>
 
 <h2>Como funciona</h2>
 <div class="steps">
 <div class="step"><div class="n">1</div><div class="x"><b>Você garante sua vaga</b><span>Um clique no botão, pagamento seguro, à vista ou em até 12x pra caber no seu bolso.</span></div></div>
-<div class="step"><div class="n">2</div><div class="x"><b>Você escolhe seu horário</b><span>Assim que confirma, você recebe o link da minha agenda e marca direto comigo, sem intermediário, sem esfriar.</span></div></div>
-<div class="step"><div class="n">3</div><div class="x"><b>30 minutos comigo, ao vivo</b><span>Eu leio o seu momento, encontro o gargalo real e a direção que faz sentido pra você.</span></div></div>
-<div class="step"><div class="n">4</div><div class="x"><b>Você sai com o plano de 3 meses</b><span>Um plano de ação prático e organizado, o passo a passo pra executar, não uma teoria.</span></div></div>
+<div class="step"><div class="n">2</div><div class="x"><b>Você escolhe seu horário</b><span>Assim que confirma, você recebe o link da minha agenda e marca direto comigo, sem intermediário.</span></div></div>
+<div class="step"><div class="n">3</div><div class="x"><b>30 minutos comigo, direto ao ponto</b><span>Eu leio o seu momento, encontro o que te trava e monto o seu caminho, ali na hora.</span></div></div>
+<div class="step"><div class="n">4</div><div class="x"><b>Você sai com o Plano Prático de Ação</b><span>Escrito, simples de seguir, pra começar a executar no mesmo dia. Fica com você pra sempre.</span></div></div>
 </div>
 
 <div class="forwho">
 <h3>É pra você se</h3>
 <ul>
-<li>Você tem conhecimento, experiência ou um negócio, mas está travado, sem saber o próximo passo.</li>
-<li>Você quer clareza e direção agora, não daqui a seis meses.</li>
-<li>Você está pronto pra investir em si e executar, não só "pensar sobre".</li>
+<li>Você é especialista na sua área e quer criar ou escalar seu negócio digital.</li>
+<li>Você quer clareza e um caminho agora, não daqui a meses.</li>
+<li>Você prefere um plano pronto pra executar a continuar testando no escuro.</li>
 </ul>
 </div>
 
 <div class="deliver">
 <div class="t">O que você leva pra casa</div>
-<div class="p">Um plano de ação prático de 3 meses: o seu mapa pra sair do lugar.</div>
+<div class="p">Um Plano Prático de Ação de 3 meses, escrito e simples de seguir: o passo a passo pra tirar o seu negócio digital do papel e começar já no mesmo dia. Fica com você pra sempre.</div>
 </div>
 
+<div class="anchor">Pense no tempo que você já perdeu tentando descobrir por onde começar. O plano custa uma fração disso.</div>
 <div class="price">
-<div class="parc">12x de <b>R$ 61,38</b></div>
-<div class="v">ou R$ 597 à vista</div>
-<div class="d">sessão de 30 minutos + o plano de ação de 3 meses</div>
+<div class="parc">12x de <b>R$ 40,82</b></div>
+<div class="v">ou R$ 397 à vista</div>
+<div class="d">30 minutos comigo + o seu Plano Prático de Ação de 3 meses</div>
 </div>
 
-<a href="https://payfast.greenn.com.br/apfjfym/offer/MeVNHV" id="agendar" class="cta">Garantir minha vaga agora<small>pagamento seguro · em até 12x</small></a>
-<p style="text-align:center;font-size:12.5px;color:#6b6b6b;margin:-10px auto 0;max-width:460px;">Assim que o pagamento é confirmado, você recebe o link pra escolher o melhor horário na minha agenda.</p>
+<a href="https://payfast.greenn.com.br/apfjfym/offer/MeVNHV" id="agendar" class="cta">Garantir meu Plano Prático de Ação<small>pagamento seguro · em até 12x</small></a>
+<p style="text-align:center;font-size:12.5px;color:#6b6b6b;margin:-10px auto 0;max-width:490px;">Assim que o pagamento é confirmado, você recebe o link pra escolher o melhor horário na minha agenda.</p>
 
 <h2>Perguntas rápidas</h2>
 <div class="faq">
 <div class="q">É só uma conversa?</div>
-<div class="a">Não. Você sai com um plano de ação escrito de 3 meses. A conversa é o meio; o plano é a entrega.</div>
+<div class="a">Não. Você sai com um Plano Prático de Ação escrito de 3 meses. A conversa é o meio, o plano é o que fica.</div>
+<div class="q">30 minutos é suficiente?</div>
+<div class="a">É. Direto ao ponto, sem enrolação. Em meia hora eu leio o seu momento e te entrego o caminho pros próximos 3 meses.</div>
 <div class="q">E se eu quiser ir além depois?</div>
-<div class="a">Se fizer sentido pros dois, a Consultoria de Bolso é a porta pra um trabalho mais profundo comigo. Mas você sai com valor de qualquer forma.</div>
-<div class="q">Serve pro meu caso?</div>
-<div class="a">Se você tem conhecimento ou um negócio e quer direção prática, serve. Em 30 minutos eu te mostro o caminho, sem enrolação.</div>
+<div class="a">Se fizer sentido pros dois, essa é a porta pra um trabalho mais profundo comigo. Mas você sai com o plano de qualquer forma.</div>
 </div>
 
 <div class="foot">
